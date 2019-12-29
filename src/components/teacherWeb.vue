@@ -276,7 +276,7 @@ export default {
   },
   created() {
     //获取教师信息
-    axios.get(`http://localhost:3000/getdata_teacher`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_teacher`).then(res => {
       this.teacherData = res.data.data;
       for (var i = 0; i < this.teacherData.length; i++) {
         if (this.schoolid == this.teacherData[i].schoolid) {
@@ -286,7 +286,7 @@ export default {
     });
 
     //获取学生信息
-    axios.get(`http://localhost:3000/getdata_student`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_student`).then(res => {
       this.studentData = res.data.data;
       var s = 0;
       for (var i = 0; i < this.studentData.length; i++) {
@@ -341,7 +341,7 @@ export default {
         course:this.teachertrueData.course
       };
       this.getAxios(
-        `http://localhost:3000/updatedata_studentcomment`,
+        `http://116.62.171.43:3000/updatedata_studentcomment`,
         tempstudentData
       ).then(res => {
         this.studenttrueData[
@@ -363,7 +363,7 @@ export default {
       };
 
       this.getAxios(
-        `http://localhost:3000/updatedata_studenthomeword`,
+        `http://116.62.171.43:3000/updatedata_studenthomeword`,
         tempstudentData
       ).then(res => {
         this.studenttrueData = res.data.data;

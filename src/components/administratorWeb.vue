@@ -593,13 +593,13 @@ export default {
     };
   },
   created() {
-    axios.get(`http://localhost:3000/getdata_parent`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_parent`).then(res => {
       this.parentData = res.data.data;
     });
-    axios.get(`http://localhost:3000/getdata_teacher`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_teacher`).then(res => {
       this.teacherData = res.data.data;
     });
-    axios.get(`http://localhost:3000/getdata_student`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_student`).then(res => {
       this.studentData = res.data.data;
     });
   },
@@ -652,7 +652,7 @@ export default {
             idcard: this.tempidcard
           };
           this.getAxios(
-            `http://localhost:3000/updatedata_teacher`,
+            `http://116.62.171.43:3000/updatedata_teacher`,
             tempteacherData
           ).then(res => {
             this.teacherData[
@@ -677,7 +677,7 @@ export default {
         parent_name: this.tempparent_name
       };
       this.getAxios(
-        `http://localhost:3000/updatedata_parent`,
+        `http://116.62.171.43:3000/updatedata_parent`,
         tempparentData
       ).then(res => {
         this.parentData[
@@ -703,7 +703,7 @@ export default {
         study_time: this.tempstudy_time
       };
       this.getAxios(
-        `http://localhost:3000/updatedata_studentstudytime`,
+        `http://116.62.171.43:3000/updatedata_studentstudytime`,
         tempstudentData
       ).then(res => {
         this.studentData[
@@ -723,7 +723,7 @@ export default {
     },
 
     delP(parent_name) {
-      this.getAxios(`http://localhost:3000/deletedata_parent`, {
+      this.getAxios(`http://116.62.171.43:3000/deletedata_parent`, {
         parent_name: parent_name
       }).then(res => {
         this.parentData.splice(
@@ -733,7 +733,7 @@ export default {
       });
       console.log(this.parentData);
 
-      this.getAxios(`http://localhost:3000/deletedata_parent_student`, {
+      this.getAxios(`http://116.62.171.43:3000/deletedata_parent_student`, {
         parent_name: parent_name
       }).then(res => {
         for (var i = this.studentData.length - 1; i >= 0; i--) {
@@ -745,7 +745,7 @@ export default {
     },
 
     delT(idcard) {
-      this.getAxios(`http://localhost:3000/deletedata_teacher`, {
+      this.getAxios(`http://116.62.171.43:3000/deletedata_teacher`, {
         idcard: idcard
       }).then(res => {
         this.teacherData.splice(
@@ -758,7 +758,7 @@ export default {
 
     delS(id, child_name, course) {
       console.log(id);
-      this.getAxios(`http://localhost:3000/deletedata_student`, {
+      this.getAxios(`http://116.62.171.43:3000/deletedata_student`, {
         id: id
       }).then(res => {
         console.log(res);
@@ -778,7 +778,7 @@ export default {
       };
 
       this.getAxios(
-        `http://localhost:3000/insertdata_parent`,
+        `http://116.62.171.43:3000/insertdata_parent`,
         tempparentData
       ).then(res => {
         this.parentData.push(res.data.data);
@@ -797,7 +797,7 @@ export default {
         study_time: this.tempstudy_time
       };
       this.getAxios(
-        `http://localhost:3000/insertdata_teacher`,
+        `http://116.62.171.43:3000/insertdata_teacher`,
         tempteacherData
       ).then(res => {
         this.teacherData.push(res.data.data);
@@ -817,10 +817,10 @@ export default {
         study_time: this.tempstudy_time
       };
       this.getAxios(
-        `http://localhost:3000/insertdata_student`,
+        `http://116.62.171.43:3000/insertdata_student`,
         tempstudentData
       ).then(res => {
-        axios.get(`http://localhost:3000/getdata_student`).then(res => {
+        axios.get(`http://116.62.171.43:3000/getdata_student`).then(res => {
           this.studentData = res.data.data;
         });
       });

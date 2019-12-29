@@ -107,7 +107,7 @@ export default {
     };
   },
   created() {
-    axios.get(`http://localhost:3000/getdata_student`).then(res => {
+    axios.get(`http://116.62.171.43:3000/getdata_student`).then(res => {
       this.studentData = res.data.data;
       var s = 0;
       for (var i = 0; i < this.studentData.length; i++) {

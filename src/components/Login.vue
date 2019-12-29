@@ -75,7 +75,7 @@ export default {
 
     loginBtn() {
       if (this.user == "parent") {
-        this.getAxios(`http://localhost:3000/getdata_parent`).then(res => {
+        this.getAxios(`http://116.62.171.43:3000/getdata_parent`).then(res => {
           this.parentData = res.data.data;
           console.log(this.parentData);
           for (var i = 0; i < this.parentData.length; i++) {
@@ -95,7 +95,7 @@ export default {
       }
 
       if (this.user == "teacher") {
-        this.getAxios(`http://localhost:3000/getdata_teacher`).then(res => {
+        this.getAxios(`http://116.62.171.43:3000/getdata_teacher`).then(res => {
           this.teacherData = res.data.data;
           console.log(this.teacherData);
           for (var i = 0; i < this.teacherData.length; i++) {
@@ -115,7 +115,7 @@ export default {
       }
 
       if (this.user == "administrator") {
-        this.getAxios(`http://localhost:3000/getdata_administrator`).then(
+        this.getAxios(`http://116.62.171.43:3000/getdata_administrator`).then(
           res => {
             this.administratorData = res.data.data;
             console.log(this.administratorData);
